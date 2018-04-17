@@ -1,0 +1,9 @@
+<h3>Path of the user:</h3>
+
+<div *ngIf="(flow | json) == '{}'">You are yet to start traversing the application</div>
+
+<div class="flow-view">
+  <ul>
+    <li *ngFor="let service of flow.path">{{service}}</li>
+  </ul>
+</div>

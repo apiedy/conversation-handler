@@ -1,0 +1,19 @@
+<h3>Available Services:</h3>
+
+<div class="service-list">
+  <ul [hidden]="pathComplete">
+    <li *ngFor="let service of currentServices">
+      {{service}}
+      <input [(ngModel)]="names[service]" type="text">
+      <button (click)="callService(service)">Invoke</button>
+    </li>
+  </ul>
+</div>
+
+<div [hidden]="!pathComplete">
+  You have completed the path!!
+</div>
+
+<app-flow-view [flow]="flow"></app-flow-view>
+
+<button (click)="clearToken()" >Clear Token</button>
